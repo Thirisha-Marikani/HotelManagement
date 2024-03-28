@@ -1,40 +1,47 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { AddBookingComponent } from './add-booking/add-booking.component';
+import { BookingListComponent } from './booking-list/booking-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RoomtypeComponent } from './roomtype/roomtype.component';
+import { OwnerLoginComponent } from './owner-login/owner-login.component';
 
-import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { ProductListComponent } from './modules/admin/components/product-list/product-list.component';
-import { UpdateproductComponent } from './modules/admin/components/updateproduct/updateproduct.component';
-import { ProductComponent } from './modules/admin/components/product/product.component';
-import { ProductdetailsComponent } from './modules/admin/components/productdetails/productdetails.component';
-import { ContactComponent } from './contact/contact.component';
-import { Home1Component } from './home1/home1.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
-import { GetproductComponent } from './modules/admin/components/getproduct/getproduct.component';
-import { Contact1Component } from './modules/admin/components/contact1/contact1.component';
-import { AboutComponent } from './about/about.component';
+import { LogindashboardComponent } from './usermodule/logindashboard/logindashboard.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
+import { CustomersidebookingComponent } from './customersidebooking/customersidebooking.component';
+import { CustomerallbookingsComponent } from './customerallbookings/customerallbookings.component';
+import { CustomersideAddcustomerComponent } from './customerside-addcustomer/customerside-addcustomer.component';
+import { CustomersideroomtypesComponent } from './customersideroomtypes/customersideroomtypes.component';
 
 
 const routes: Routes = [
-  {path:'register',component:RegisterComponent},
-  {path:'login',component:LoginComponent},
-  {path:'',redirectTo:'home1',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'admin',component:AdminloginComponent},
-  {path:'adminboard',
-  loadChildren:()=>import('./modules/admin/admin.module').then((m)=>m.AdminModule),},
-  {path:'productlist',component:ProductListComponent},
-  {path:'updateproduct/:id',component:UpdateproductComponent},
-  {path:'products',component:ProductComponent},
-  {path:'home1',component:Home1Component},
-  {path:'productdetails/:id',component:ProductdetailsComponent},
-  {path:'getproductdetails/:id',component:GetproductComponent},
-  {path:'contact',component:ContactComponent},
-  {path:'contact1',component:Contact1Component},
-  {path:'cart',component:CartPageComponent},
-  {path:'about',component:AboutComponent}
+  {path:'dashboard/customers',component:CustomerListComponent},
+  {path:'dashboard/addCustomer',component:AddCustomerComponent},
+  {path:'updateCustomer/:id',component:UpdateCustomerComponent},
+  {path:'bookRoom/:id',component:AddBookingComponent},
+  {path:'dashboard/bookings',component:BookingListComponent},
+  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard/roomtype',component:RoomtypeComponent},
+  {path:'ownerlogin',component: OwnerLoginComponent},
+
+  
+  
+  {path:'',component: LogindashboardComponent},
+
+  {path:'customerlogin',component: CustomerLoginComponent},
+  {path:'customerdashboard',component:CustomerdashboardComponent},
+  
+  {path:'customerdashboard/roombooking',component: CustomersidebookingComponent},
+  {path:'customerdashboard/customerallbookings',component: CustomerallbookingsComponent},
+  {path:'addcustomer',component: CustomersideAddcustomerComponent},
+  {path:'customerdashboard/roomtypesbooking',component: CustomersideroomtypesComponent}
+
+  
+  
 ];
 
 @NgModule({
@@ -42,3 +49,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
